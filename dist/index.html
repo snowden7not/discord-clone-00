@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord | Your Place to Talk and Hang Out</title>
+    <!--< src="https://cdn.tailwindcss.com"></script> --> 
+
+    <link rel="shortcut icon" href="/assets/favicon-CiVyhe5u.ico" type="image/x-icon">
+
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">--> <!--for hamburger fromfont-awesome(this hamburger is not in use , just for knowlwdge)-->
+    <script src="https://kit.fontawesome.com/58a810656e.js" crossorigin="anonymous"></script> <!--for twitter ,youtube, tiktok icons from font-awesome-->
+  <link rel="stylesheet" crossorigin href="/assets/index-Q-TCKF1n.css">
+</head>
+<body>
+    <!--nav section--> <!--website is responsive upto 154 px-->
+    <div class="bg-[#404EED] font-['ggSans'] relative">
+        <!--navbar-->
+        <nav class=" w-full text-white mx-auto flex justify-between items-center h-[70px] px-7 two:px-0 bg-[#404EED]" id="navi">
+
+            <!--logo-->
+            <img src="/assets/logo-CXKeMjE4.svg" alt="" class="two:pl-[30px] max-usm:h-[25px] max-usm:pl-[5px]">
+            <!--nav options-->
+            <div class="hidden two:flex gap-[50px]  font-[600] font-ggSans ">
+                <a href="#" class="capitalize hover:underline">download</a>
+                <a href="#" class="capitalize hover:underline">nitro</a>
+                <a href="#" class="capitalize hover:underline">discover</a>
+                <a href="#" class="capitalize  hover:underline">safety</a>  
+                <a href="#" class="capitalize hover:underline">support</a>
+                <a href="#" class="capitalize hover:underline">blog</a>
+                <a href="#" class="capitalize hover:underline">careers</a>
+            </div>
+            <!--login & hamburger-->
+            <div class="flex px-[5px] two:mr-[70px]">
+                <!-- Open DiscordBtn -->
+                <a href="#" class="hidden one:flex">
+                    <button class="bg-white text-black text-[14px] font-[500]  px-4 py-2 rounded-full">
+                        Login
+                    </button>
+                </a>
+            
+                <!--hamburger button using svg image-->
+                <!--<div class="usm:pr-[30px]">
+                    <button class="pl-[10px] usm:pr-[15px] two:hidden" id="burger">
+                        <img src="./images/menu-sharp-svgrepo-com.svg" alt="" class="h-[40px] w-[40px] max-usm:w-[20px]">
+                    </button>
+                </div>-->
+
+                <!--hamburger from font-awesome-->
+                <!--<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                </a>-->
+                
+                <!--animated hamburger by coloring 3 div to black color -->
+                <div class="topnav px-[20px] pt-[5px]">
+                    <div class="container icon" onclick="toggleMenuAndAnimate(this)">
+                      <div class="bar1"></div>
+                      <div class="bar2"></div>
+                      <div class="bar3"></div>
+                    </div>
+                  </div>
+                  
+            </div>
+        </nav>
+    </div>
+
+    <script>
+        const navbar = document.querySelector("#navi"); // Select the header  element
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY; // Get current scroll position
+            if (scrollTop > 0) { // Apply 'fixed' class when scrolled past navbar height
+                navbar.classList.add("fixed");
+                navbar.classList.add("top-0"); // Add 'top-0' for fixed positioning at top
+                //navbar.classList.add("z-100");
+            } else {
+                navbar.classList.remove("fixed");
+                navbar.classList.remove("top-0"); // Remove styles for non-sticky state
+            }
+        });
+    </script> <!--for making navbar sticky on scrolling website -->
+
+    <!--start for code of view after click on hamburger and animation (of hamburger to cross) -->
+    <div class="topnav ">
+        <!--<a href="#home" class="active">Logo</a>-->
+        <div id="myLinks" class=" ">
+          <a href="#news" class="">Download</a>
+          <a href="#contact">Nitro</a>
+          <a href="#Safety">Safety</a>
+          <a href="#Support">Support</a>
+          <a href="#Blog">Blog</a>
+          <a href="#Careers">Careers</a>
+        </div>
+        <!--<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>-->
+    </div>
+
+    <style>
+        /*animated burger style start*/
+        .container {
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .bar1, .bar2, .bar3 {
+            width: 30px;
+            height: 5px;
+            background-color: whitesmoke;
+            margin: 6px 0;
+            transition: 0.4s;
+        }
+        @media not all and (min-width: 349px) {
+            .bar1, .bar2, .bar3 {
+                height: 2.5px;
+            }
+        } /*media query for hamburger h:2px for width upto 349px*/
+
+        .change .bar1 {
+            transform: translate(0, 11px) rotate(-45deg);
+        }
+
+        .change .bar2 {opacity: 0;}
+
+        .change .bar3 {
+            transform: translate(0, -11px) rotate(45deg);
+        }
+        /*animated burger style end*/
+
+        /*start of style for view after click on hamburger*/
+        body {
+          font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .topnav #myLinks {
+            display: none;
+        }
+      
+        .topnav a {
+            color: black;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+            display: block;
+        }
+      
+        .topnav a.icon {
+            background: black;
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+      
+        .topnav a:hover {
+            background-color:#5d68e2;
+            color: black;
+            padding-left: 7%;
+        }
+        /*end of style for view after click on hamburger*/
+    </style>
+
+    <script>
+    function toggleMenuAndAnimate(element) {
+    	var x = document.getElementById("myLinks");
+
+        // Toggle display style of the menu
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
+        }
+
+        // Animate the bars of hamburgur to cross
+        element.classList.toggle("change");
+    }
+    </script>
+    <!--end for code of view after click on hamburger (of hamburger to cross) -->
+    <!--technically nav section ends here-->
+
+    <!--hero section-->
+    <div class="bg-[#404EED] w-full relative overflow-x-hidden -mt-1 h-screen max-one:h-[30rem] two:h-[600px]">
+        <img src="/assets/Image0-CSxO-xBo.svg" class="max-two:hidden absolute z-10 bottom-0 h-[310px]">
+
+        <img src="/assets/Image1-BABztOGv.svg" class="max-two:hidden absolute z-10 -right-[20%] h-[350px] bottom-0">
+
+        <div class="max-two:flex max-two:flex-col max-two:gap-20 max-two:bottom-0 ">
+        <img src="/assets/Image2-BOG0rjd2.svg" class="max-two:-left-[5%] absolute z-10 -left-[29%] h-[360px] bottom-0 max-two:h-[200px] max-one:pt-[14px] max-two:pl-[105px] max-one:px-[30px]" >
+
+        <div class="text-center max-w-[900px] two:max-w-[1200px] two:px-7 mx-auto flex flex-col gap-5 pt-[50px]  two:pt-[120px] two:h-[555px] ">
+            <h2 class="z-20 text-white font-[800]text-[34px] two:text-[56px] two:text-center font-['GintoNord']">
+                IMAGINE A PLACE...
+            </h2>
+            <p class="z-20 text-white font-[400]  two:text-center p-0 m-0  two:text-[20px] two:leading-[32.5px] w-[90%] two:w-[70%] two:self-center max-two:text-[14px] max-one:text-[12px] font-['gg sans']">
+                ...where you can belong to a school club, a gaming group, or a  worldwide art community. Where just you and a handful of friends can spend time together. A place that makes it easy to talk every day and hang out more often.
+            </p>
+        </div>
+        </div>
+
+        <!--download, open discord (for large dvices)-->
+        <div class="max-two:hidden font-[500] gap-10 flex justify-center items-center mt-[-195px]">
+            <a href="#" class="bg-white rounded-full flex justify-center items-center z-40 h-[60px] w-[290px]  gap-4">
+                <img src="data:image/svg+xml,%3c?xml%20version='1.0'%20encoding='utf-8'?%3e%3c!--%20Uploaded%20to:%20SVG%20Repo,%20www.svgrepo.com,%20Generator:%20SVG%20Repo%20Mixer%20Tools%20--%3e%3csvg%20width='800px'%20height='800px'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M12.5535%2016.5061C12.4114%2016.6615%2012.2106%2016.75%2012%2016.75C11.7894%2016.75%2011.5886%2016.6615%2011.4465%2016.5061L7.44648%2012.1311C7.16698%2011.8254%207.18822%2011.351%207.49392%2011.0715C7.79963%2010.792%208.27402%2010.8132%208.55352%2011.1189L11.25%2014.0682V3C11.25%202.58579%2011.5858%202.25%2012%202.25C12.4142%202.25%2012.75%202.58579%2012.75%203V14.0682L15.4465%2011.1189C15.726%2010.8132%2016.2004%2010.792%2016.5061%2011.0715C16.8118%2011.351%2016.833%2011.8254%2016.5535%2012.1311L12.5535%2016.5061Z'%20fill='%231C274C'/%3e%3cpath%20d='M3.75%2015C3.75%2014.5858%203.41422%2014.25%203%2014.25C2.58579%2014.25%202.25%2014.5858%202.25%2015V15.0549C2.24998%2016.4225%202.24996%2017.5248%202.36652%2018.3918C2.48754%2019.2919%202.74643%2020.0497%203.34835%2020.6516C3.95027%2021.2536%204.70814%2021.5125%205.60825%2021.6335C6.47522%2021.75%207.57754%2021.75%208.94513%2021.75H15.0549C16.4225%2021.75%2017.5248%2021.75%2018.3918%2021.6335C19.2919%2021.5125%2020.0497%2021.2536%2020.6517%2020.6516C21.2536%2020.0497%2021.5125%2019.2919%2021.6335%2018.3918C21.75%2017.5248%2021.75%2016.4225%2021.75%2015.0549V15C21.75%2014.5858%2021.4142%2014.25%2021%2014.25C20.5858%2014.25%2020.25%2014.5858%2020.25%2015C20.25%2016.4354%2020.2484%2017.4365%2020.1469%2018.1919C20.0482%2018.9257%2019.8678%2019.3142%2019.591%2019.591C19.3142%2019.8678%2018.9257%2020.0482%2018.1919%2020.1469C17.4365%2020.2484%2016.4354%2020.25%2015%2020.25H9C7.56459%2020.25%206.56347%2020.2484%205.80812%2020.1469C5.07435%2020.0482%204.68577%2019.8678%204.40901%2019.591C4.13225%2019.3142%203.9518%2018.9257%203.85315%2018.1919C3.75159%2017.4365%203.75%2016.4354%203.75%2015Z'%20fill='%231C274C'/%3e%3c/svg%3e" alt="" class=" h-[20px] w-[20px]">
+                <p class="hover:text-[#404EED] font-['ggSans']">
+                    Download for Windows
+                </p>
+            </a>
+            <a href="#" class="bg-black rounded-full flex justify-center items-center z-40 w-[290px] h-[60px]">
+                <p class="text-white">
+                    Open Discord in your browser
+                </p>
+            </a>
+        </div>
+
+        <!--play store for small devices-->
+        <div class="max-two:flex max-two:flex-col gap-y-[30px]">
+        <div class="two:hidden font-[500] flex justify-center items-center 
+        mt-[-195px] max-one:pb-[12px]">
+            <a href="#" class="bg-white rounded-full flex justify-center items-center z-40 h-[60px] w-[290px]  gap-4 mt-[220px] max-one:h-[45px]">
+                <img src="data:image/svg+xml,%3c?xml%20version='1.0'%20encoding='utf-8'?%3e%3c!--%20Uploaded%20to:%20SVG%20Repo,%20www.svgrepo.com,%20Generator:%20SVG%20Repo%20Mixer%20Tools%20--%3e%3csvg%20width='800px'%20height='800px'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M12.5535%2016.5061C12.4114%2016.6615%2012.2106%2016.75%2012%2016.75C11.7894%2016.75%2011.5886%2016.6615%2011.4465%2016.5061L7.44648%2012.1311C7.16698%2011.8254%207.18822%2011.351%207.49392%2011.0715C7.79963%2010.792%208.27402%2010.8132%208.55352%2011.1189L11.25%2014.0682V3C11.25%202.58579%2011.5858%202.25%2012%202.25C12.4142%202.25%2012.75%202.58579%2012.75%203V14.0682L15.4465%2011.1189C15.726%2010.8132%2016.2004%2010.792%2016.5061%2011.0715C16.8118%2011.351%2016.833%2011.8254%2016.5535%2012.1311L12.5535%2016.5061Z'%20fill='%231C274C'/%3e%3cpath%20d='M3.75%2015C3.75%2014.5858%203.41422%2014.25%203%2014.25C2.58579%2014.25%202.25%2014.5858%202.25%2015V15.0549C2.24998%2016.4225%202.24996%2017.5248%202.36652%2018.3918C2.48754%2019.2919%202.74643%2020.0497%203.34835%2020.6516C3.95027%2021.2536%204.70814%2021.5125%205.60825%2021.6335C6.47522%2021.75%207.57754%2021.75%208.94513%2021.75H15.0549C16.4225%2021.75%2017.5248%2021.75%2018.3918%2021.6335C19.2919%2021.5125%2020.0497%2021.2536%2020.6517%2020.6516C21.2536%2020.0497%2021.5125%2019.2919%2021.6335%2018.3918C21.75%2017.5248%2021.75%2016.4225%2021.75%2015.0549V15C21.75%2014.5858%2021.4142%2014.25%2021%2014.25C20.5858%2014.25%2020.25%2014.5858%2020.25%2015C20.25%2016.4354%2020.2484%2017.4365%2020.1469%2018.1919C20.0482%2018.9257%2019.8678%2019.3142%2019.591%2019.591C19.3142%2019.8678%2018.9257%2020.0482%2018.1919%2020.1469C17.4365%2020.2484%2016.4354%2020.25%2015%2020.25H9C7.56459%2020.25%206.56347%2020.2484%205.80812%2020.1469C5.07435%2020.0482%204.68577%2019.8678%204.40901%2019.591C4.13225%2019.3142%203.9518%2018.9257%203.85315%2018.1919C3.75159%2017.4365%203.75%2016.4354%203.75%2015Z'%20fill='%231C274C'/%3e%3c/svg%3e" alt="" class=" h-[20px] w-[20px] ml-[10px]">
+                <p class="max-one:text-[0.75rem] hover:text-[#404EED] font-['ggSans']">
+                    Download from Google Play
+                </p>
+            </a>
+        </div>
+        <div class=" two:hidden font-[500] gap-10 flex justify-center  items-center ">
+            <a href="#" class="bg-black rounded-full flex justify-center items-center z-40 w-[290px] h-[60px] pr-[10px] pl-[15px] text-center py-[10px]">
+                <p class="text-white flex flex-wrap overflow-hidden ">
+                    Download Discord to chat and hangout
+                </p>
+            </a>
+        </div>
+        </div>
+    </div>
+
+    <!-- section-1 -->
+    <div class="h-screen flex two:flex-row flex-col two:gap-[100px]">
+        <!--left img-->
+        <img src="/assets/section1Image-GM9lXWlT.svg" alt="" class="h-[355px] two:mt-[105px] mt-[50px] two:ml-[65px] flex justify-center align-center max-two:h-[225px]">
+        <!--right text-->
+        <div class="flex flex-col gap-5 two:mt-[135px] mx-auto two:w-[31%] ml-4">
+            <h1 class="two:font-[700] font-[600] font-['ggsans'] two:text-[44px] text-[23px] two:leading-[52px]">
+                Create an invite-only place where you belong
+            </h1>
+            <p class="two:text-[20px] text-[16px] pb-[30px] font-['ggsans']">
+                Discord servers are organized into topic-based channels where you can collaborate, share, and just talk about your day without clogging up a group chat.
+            </p>
+        </div>
+    </div>
+
+    <!-- section-2 large screen-->
+    <div class="max-two:hidden bg-[#f6f6f6] h-screen flex two:flex-row flex-col p-[65px]">
+        <!--left text-->
+        <div class="flex flex-col gap-5 two:mt-[135px] mx-auto two:w-[31%] ml-6 mt-[80px] ">
+            <h1 class="two:font-[700] font-[600] font-['ggsans'] two:text-[44px] text-[23px] two:leading-[52px]">
+            Where hanging out is easy
+            </h1>
+            <p class="two:text-[20px] text-[16px]  font-['ggSans'] ">
+                Grab a seat in a voice channel when you’re free. Friends in your server can see you’re around and instantly pop in to talk without having to call.
+            </p>
+        </div>
+        <!--right text-->
+        <img src="/assets/section2Image-Dea8yhUW.svg" alt="" class="  h-[355px] flex justify-center align-center ">
+    </div>
+
+    <!--screen 2 small screen-->
+    <div class="two:hidden bg-[#f6f6f6] h-screen flex  flex-col">
+        <!--left img-->
+        <img src="/assets/section2Image-Dea8yhUW.svg" alt="" class="h-[355px] mt-[50px] flex justify-center align-center max-two:h-[225px]">
+        <!--right text-->
+        <div class="flex flex-col gap-5 mx-auto ml-4 mt-8 mb-3">
+            <h1 class=" font-[600] font-[ggsans] text-[23px]">
+                Where hanging out is easy
+            </h1>
+            <p class=" text-[16px] pb-[30px]">
+                Grab a seat in a voice channel when you’re free. Friends in your server can see you’re around and instantly pop in to talk without having to call.
+            </p>
+        </div>
+    </div>
+
+    <!-- section-3 -->
+    <div class="h-screen flex two:flex-row flex-col two:gap-[100px]">
+        <!--left img-->
+        <img src="/assets/section3Image-BaIpeet_.svg" alt="" class="h-[355px] two:mt-
+    [105px] mt-[50px] two:ml-[65px] flex justify-center align-center max-two:h-[225px]">
+        <!--right text-->
+        <div class="flex flex-col gap-5 two:mt-[135px] mx-auto two:w-[31%] ml-4 ">
+            <h1 class="two:font-[700] font-[600] font-['ggSans'] two:text-[44px] text-[23px] two:leading-[52px]">
+                From few to a fandom
+            </h1>
+            <p class="two:text-[20px] text-[16px] pb-[30px] font-['ggSans']">
+                Get any community running with moderation tools and custom memberaccess. Give members special powers, set up private channels, and more.
+            </p>
+        </div>
+    </div>
+
+    <!--screen 4-->
+    <div class="bg-[#f6f6f6] two:h-[1260px] flex flex-col ">
+        <div class="">
+            <h1 class="pt-[50px] two:pt-[105px]  font-[900] two:text-[50px] max-two:text-[35px] leading-tight two:mx-[164px]  text-center max-usm:text-[20px] font-['GintoNord']">
+                    <span class="text-center">
+                        RELIABLE TECH FOR
+                    </span>
+                    <span class="text-center">STAYING CLOSE
+                    </span>
+            </h1>
+            <p class="pt-[10px] two:font-[500] max-two:font-[400] text-[17px] two:mx-[164px] usm:two:px-[50px] max-usm:px-[10px]">
+                Low-latency voice and video feels like you’re in the same room. Wave hello over video, watch friends stream their games, or gather up and have a drawing session with screen share.
+            </p>
+        </div>
+        <img src="/assets/section4Image-HGHnYhLo.svg" alt="" class="max-two:h-[225px] w-[1150px] mx-auto">
+        <img src="data:image/svg+xml,%3csvg%20width='531'%20height='49'%20viewBox='0%200%20531%2049'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M527.098%2015.0977L530.701%2013.5155C530.789%2013.4276%20530.789%2013.3397%20530.701%2013.3397L527.098%2011.7576L525.428%208.06592C525.428%207.97803%20525.34%207.97803%20525.34%208.06592L523.67%2011.6697L520.066%2013.3397C519.978%2013.3397%20519.978%2013.4276%20520.066%2013.5155L523.67%2015.0977L525.34%2018.7015H525.428L527.098%2015.0977Z'%20fill='%236ADBC6'/%3e%3cpath%20opacity='0.5'%20d='M303.575%206.4L306.975%204.9V4.7L303.575%203.3L302.075%200H301.875L300.375%203.3L297.075%204.7C296.975%204.8%20296.975%204.9%20297.075%204.9L300.375%206.4L301.875%209.8H302.075L303.575%206.4Z'%20fill='%239691FF'/%3e%3cpath%20d='M505.875%2043.8621L510.95%2041.6367C510.982%2041.6007%20511%2041.5541%20511%2041.5058C511%2041.4575%20510.982%2041.4109%20510.95%2041.3749L505.875%2039.1495L503.598%2034.0443C503.585%2034.0304%20503.57%2034.0192%20503.554%2034.0116C503.537%2034.004%20503.518%2034%20503.5%2034C503.482%2034%20503.463%2034.004%20503.446%2034.0116C503.43%2034.0192%20503.415%2034.0304%20503.402%2034.0443L501.125%2039.0841L496.05%2041.3749C496.018%2041.4109%20496%2041.4575%20496%2041.5058C496%2041.5541%20496.018%2041.6007%20496.05%2041.6367L501.125%2043.8621L503.402%2048.9018C503.489%2049.0327%20503.554%2049.0327%20503.598%2048.9018L505.875%2043.8621Z'%20fill='%23628BF7'/%3e%3cpath%20d='M15.2764%2034.15L22.9764%2030.75C23.0294%2030.75%2023.0803%2030.7289%2023.1178%2030.6914C23.1553%2030.6539%2023.1764%2030.603%2023.1764%2030.55C23.1764%2030.497%2023.1553%2030.4461%2023.1178%2030.4086C23.0803%2030.3711%2023.0294%2030.35%2022.9764%2030.35L15.2764%2026.95C15.2499%2026.95%2015.2244%2026.9395%2015.2057%2026.9207C15.1869%2026.902%2015.1764%2026.8765%2015.1764%2026.85L11.6764%2019.15C11.6764%2018.95%2011.4764%2018.95%2011.3764%2019.15L7.97639%2026.85H7.87639L0.0763931%2030.35C0.0271976%2030.405%200%2030.4762%200%2030.55C0%2030.6238%200.0271976%2030.695%200.0763931%2030.75L7.87639%2034.15H7.97639L11.3764%2041.95C11.4764%2042.15%2011.6764%2042.15%2011.6764%2041.95L15.1764%2034.25C15.1764%2034.2235%2015.1869%2034.198%2015.2057%2034.1793C15.2244%2034.1605%2015.2499%2034.15%2015.2764%2034.15Z'%20fill='%23FF7ABC'/%3e%3c/svg%3e" alt="" class="mx-auto">
+        <p class="font-[700] text-[30px] text-center pb-[54px] font-['ggSans']">
+            Ready to start your journey?
+        </p>
+        <!--download for large screen-->
+        <div class="max-two:hidden font-[500] gap-10 flex justify-center items-center ">
+        	<a href="#" class="bg-[#5964e4] rounded-full flex justify-center items-center z-40 h-[60px] w-[290px]  gap-4">
+                <img src="data:image/svg+xml,%3c!DOCTYPE%20svg%20PUBLIC%20'-//W3C//DTD%20SVG%201.1//EN'%20'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3e%3c!--%20Uploaded%20to:%20SVG%20Repo,%20www.svgrepo.com,%20Transformed%20by:%20SVG%20Repo%20Mixer%20Tools%20--%3e%3csvg%20width='102px'%20height='102px'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%20stroke='%23fcfcfc'%3e%3cg%20id='SVGRepo_bgCarrier'%20stroke-width='0'/%3e%3cg%20id='SVGRepo_tracerCarrier'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cg%20id='SVGRepo_iconCarrier'%3e%3cg%20id='Interface%20/%20Download'%3e%3cpath%20id='Vector'%20d='M6%2021H18M12%203V17M12%2017L17%2012M12%2017L7%2012'%20stroke='%23fcfcfc'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/g%3e%3c/svg%3e" alt="" class=" h-[20px] w-[20px]">
+                <p class="hover:shadow-md text-white font-['ggSans']">
+                    Download for Windows
+                </p>
+            </a>
+        </div>
+        <!--google play for small screen-->
+        <div class="two:hidden font-[500] flex justify-center items-center mt-[-195px] max-one:pb-[12px] mb-[60px]">
+            <a href="#" class="bg-[#5964e4] rounded-full flex justify-center items-center z-40 h-[60px] w-[290px]  gap-4 mt-[220px] max-one:h-[45px]">
+                <img src="data:image/svg+xml,%3c!DOCTYPE%20svg%20PUBLIC%20'-//W3C//DTD%20SVG%201.1//EN'%20'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3e%3c!--%20Uploaded%20to:%20SVG%20Repo,%20www.svgrepo.com,%20Transformed%20by:%20SVG%20Repo%20Mixer%20Tools%20--%3e%3csvg%20width='102px'%20height='102px'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%20stroke='%23fcfcfc'%3e%3cg%20id='SVGRepo_bgCarrier'%20stroke-width='0'/%3e%3cg%20id='SVGRepo_tracerCarrier'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cg%20id='SVGRepo_iconCarrier'%3e%3cg%20id='Interface%20/%20Download'%3e%3cpath%20id='Vector'%20d='M6%2021H18M12%203V17M12%2017L17%2012M12%2017L7%2012'%20stroke='%23fcfcfc'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/g%3e%3c/svg%3e" alt="" class=" h-[20px] w-[20px] ml-[10px]">
+                <p class="max-one:text-[0.75rem] text-white font-['ggSans']">
+                    Download from Google Play
+                </p>
+            </a>
+        </div>
+    </div>
+
+    <!--footer  two:h-[650px] -->
+    <div class=" bg-[#23272A] py-[95px] pl-[65px] max-usm:pl-[20px]"> <!--[#23272A]-->
+        <!-- above violet line -->
+        <div class=" pb-[100px] flex max-two:flex-col">
+            <!--english , social logo-->
+            <div class="flex flex-col ">
+                <div class="flex max-usm:text-[10px]"> 
+                        <form class="flex items-center mb-4 bg-[#23272A]">
+                        <!--<label for="language" class="mr-4 text-sm font-medium"></label>-->
+                        <div class="flex items-center mr-1">
+                          <img class="flag-image w-6 h-4 max-usm:w-[15px] " src="https://flagcdn.com/16x12/us.png" alt="English Flag">
+                        </div>
+                        <select id="language" name="language" class=" rounded-md border border-gray-300 py-2 focus:outline-none focus:ring-indigo-500 bg-[#23272A] border-none text-white">
+                            <option value="">-- Select --</option>
+                            <option value="en" selected>English (US)</option>
+                            <option value="es">Spanish (ES)</option>
+                            <option value="fr">French (FR)</option>
+                            <option value="hi">Hindi (IN)</option>
+                            <option value="bd">Bengali (BD)</option>
+                        </select>
+                      </form>
+
+                      <script>
+                        const selectElement = document.getElementById('language');
+                        const flagImage = document.querySelector('.flag-image');
+                    
+                        const flagImageUrl = { // Object to store flag image URLs based on language code
+                          en: 'https://flagcdn.com/16x12/us.png',
+                          es: 'https://flagcdn.com/16x12/es.png',
+                          fr: 'https://flagcdn.com/16x12/fr.png',
+                          hi: 'https://flagcdn.com/16x12/in.png',
+                          bd: 'https://flagcdn.com/16x12/bd.png',
+                          // Add more language codes and image URLs here
+                        };
+                    
+                        selectElement.addEventListener('change', (event) => {
+                          const selectedValue = event.target.value;
+                    
+                          if (selectedValue) {
+                            flagImage.src = flagImageUrl[selectedValue];
+                            flagImage.alt = `${selectedValue.toUpperCase()} Flag`; // Set alt text to uppercase language code
+                          } else {
+                            flagImage.src = '';
+                          }
+                        });
+                        
+                        // Remove the first option (index 0) "-- Select --" from drop down options
+                        const dlt = document.getElementById('language');
+        	            dlt.remove(0);
+                      </script>
+                </div>
+                <!--social logo-->
+                <div class="text-white text-[23px] flex gap-7 pt-[10px] max-usm:flex-wrap">
+                    <a href="#">
+                      <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                    <a href="#">
+                      <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#">
+                      <i class="fa-brands fa-square-facebook"></i>
+                    </a>
+                    <a href="#">
+                      <i class="fa-brands fa-youtube"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+                </div>
+            </div>
+            <!--product,company,resources,policy-->
+            <div class="flex max-two:flex-wrap two:gap-[90px] max-usm:flex-col ">
+                <div class="two:pl-[150px] w-[50%] two:w-fit ">
+                  <h2 class="text-[16px] font-['ggSans'] two:py-[10px] py-[15px] text-[#5964e4]">
+                    Product
+                  </h2>
+                  <ul class="text-white flex flex-col gap-[10px] leading-[24px] 
+              font-[400] font-['ggSans']">
+                    <li class="hover:underline"><a href="#">Download</a></li>
+                    <li class="hover:underline"><a href="#">Nitro</a></li>
+                    <li class="hover:underline"><a href="#">Status</a></li>
+                  </ul>
+                </div>
+                <div class="w-[50%] two:w-fit">
+                  <h2 class="text-[16px] font-['ggSans'] two:py-[10px] py-[15px] text-[#5964e4]">
+                    Company
+                  </h2>
+                  <ul class="text-white flex flex-col gap-[10px] leading-[24px] 
+              font-[400] font-['ggSans']">
+                    <li class="hover:underline"><a href="#">About</a></li>
+                    <li class="hover:underline"><a href="#">Jobs</a></li>
+                    <li class="hover:underline"><a href="#">Branding</a></li>
+                    <li class="hover:underline"><a href="#">Newsroom</a></li>
+                    <li class="hover:underline text-[#1f1f1f00] select-none">
+                      <a href="#">.</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="w-[50%] two:w-fit">
+                  <h2 class="text-[16px] font-['ggSans'] two:py-[10px] py-[15px] text-[#5964e4]">
+                    Resources
+                  </h2>
+                  <ul class="text-white flex flex-col gap-[10px] leading-[24px] 
+              font-[400] font-['ggSans']">
+                    <li class="hover:underline"><a href="#">Colleges</a></li>
+                    <li class="hover:underline"><a href="#">Support</a></li>
+                    <li class="hover:underline"><a href="#">Safety</a></li>
+                    <li class="hover:underline"><a href="#">Blog</a></li>
+                    <li class="hover:underline"><a href="#">Feedback</a></li>
+                    <li class="hover:underline"><a href="#">Developers</a></li>
+                    <li class="hover:underline"><a href="#">StreamKit</a></li>
+                    <li class="hover:underline"><a href="#">Creators</a></li>
+                  </ul>
+                </div>
+                <div class="w-[50%] two:w-fit">
+                  <h2 class="text-[16px] font-['ggSans'] two:py-[10px] py-[15px] text-[#5964e4]">
+                    Policies
+                  </h2>
+                  <ul class="text-white flex flex-col gap-[10px] leading-[24px] font-[400] font-['ggSans'] ">
+                    <li class="hover:underline"><a href="#">Terms</a></li>
+                    <li class="hover:underline"><a href="#">Privacy</a></li>
+                    <li class="hover:underline"><a href="#">Cookie Settings</a></li>
+                    <li class="hover:underline"><a href="#">Guidelines</a></li>
+                    <li class="hover:underline text-ellipsis "><a href="#">Acknowledgements</a></li>
+                    <li class="hover:underline"><a href="#">Licenses</a></li>
+                    <li class="hover:underline"><a href="#">Moderation</a></li>
+                  </ul>
+                </div>
+            </div> <!--combines all 4-->
+        </div><!--store all above violet line-->
+
+        <!--violet line & below-->
+        <div class=" flex border-t-2 border-[#5865f2] pt-7 justify-between items-center usm:mr-[65px] max-usm:mr-[20px] max-usm:flex-col max-usm:gap-[30px]">
+            <div class="text-white ">
+                <img src="/assets/logo-CXKeMjE4.svg" alt="logo">
+            </div>
+            <div class=" ">
+                <button class="text-white bg-[#5865f2] px-[16px] py-[7px] rounded-full leading-[24px] text-[14px] font-[500] hover:bg-[#5865f2]">
+                    Sign up
+                </button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
