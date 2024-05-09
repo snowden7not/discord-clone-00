@@ -39,6 +39,8 @@ at final :(u go in package.json file ,replace previous script with
   "build":"vite build"
 },
 
+for hosting this website see below:-
+
 then npm run build on terminal.
 then upload it to github.
 then host it on render (select static website hosting) then (publish directory: dist instead of build) then (click on create static site)
